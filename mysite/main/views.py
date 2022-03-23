@@ -1,5 +1,3 @@
-from cgitb import text
-from math import fabs
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import ToDoList, Item
@@ -10,7 +8,7 @@ from .forms import CreateNewList
 def index(response, id):
     ls = ToDoList.objects.get(id=id)
 
-    {"save":["save"]}
+    
     if response.method == "POST":
         print(response.POST)
         if response.POST.get("save"):
